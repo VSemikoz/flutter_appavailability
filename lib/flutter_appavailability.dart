@@ -1,12 +1,12 @@
 import 'dart:async';
 import 'dart:io';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 
 /// Main class of the plugin.
 class AppAvailability {
-  static const MethodChannel _channel =
-      const MethodChannel('com.pichillilorenzo/flutter_appavailability');
+  static const MethodChannel _channel = const MethodChannel('com.pichillilorenzo/flutter_appavailability');
 
   /// Check if an app is available with the given [uri] scheme.
   ///
@@ -33,18 +33,12 @@ class AppAvailability {
         "versionCode": app["versionCode"],
         "version_name": app["version_name"]
       };
-    }
-    else if (Platform.isIOS) {
+    } else if (Platform.isIOS) {
       bool appAvailable = await _channel.invokeMethod("checkAvailability", args);
       if (!appAvailable) {
         throw PlatformException(code: "", message: "App not found $uri");
       }
-      return {
-        "app_name": "",
-        "package_name": uri,
-        "versionCode": "",
-        "version_name": ""
-      };
+      return {"app_name": "", "package_name": uri, "versionCode": "", "version_name": ""};
     }
 
     return null;
@@ -88,19 +82,19 @@ class AppAvailability {
   /// Launch an app with the given [uri] scheme if it exists.
   ///
   /// If the app app isn't found, then a [PlatformException] is thrown.
-  static Future<void> launchApp(String uri) async {
-    Map<String, dynamic> args = <String, dynamic>{};
-    args.putIfAbsent('uri', () => uri);
+  static Future<void> launchApp({
+    @required String uri,
+    Map<String, dynamic> args,
+  }) async {
+    Map<String, dynamic> path = <String, dynamic>{};
+    path.putIfAbsent('uri', () => uri);
     if (Platform.isAndroid) {
-      await _channel.invokeMethod("launchApp", args);
-    }
-    else if (Platform.isIOS) {
-      bool appAvailable = await _channel.invokeMethod("launchApp", args);
+      await _channel.invokeMethod("launchApp", [path, args]);
+    } else if (Platform.isIOS) {
+      bool appAvailable = await _channel.invokeMethod("launchApp", [path, args]);
       if (!appAvailable) {
         throw PlatformException(code: "", message: "App not found $uri");
       }
     }
-
   }
-
 }
