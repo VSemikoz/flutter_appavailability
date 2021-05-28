@@ -86,8 +86,6 @@ class AppAvailability {
     @required String uri,
     Map<String, dynamic> args,
   }) async {
-    Map<String, dynamic> path = <String, dynamic>{};
-    path.putIfAbsent('uri', () => uri);
     if (Platform.isAndroid) {
       await _channel.invokeMethod('launchApp', <String, dynamic>{
         'uri': uri,
