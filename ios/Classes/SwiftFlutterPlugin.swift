@@ -18,6 +18,7 @@ public class SwiftFlutterPlugin: NSObject, Flutter.FlutterPlugin {
         break
       case "launchApp":
         uriSchema = (arguments!["uri"] as? String)!
+        uriSchema = (arguments!["args"] as? NSDictionary)!
         launchApp(uri: uriSchema, result: result)
         break
       default:
@@ -30,8 +31,14 @@ public class SwiftFlutterPlugin: NSObject, Flutter.FlutterPlugin {
     return UIApplication.shared.canOpenURL(url!)
   }
   
-  public func launchApp (uri: String, result: @escaping FlutterResult) {
+  public func launchApp (uri: String, args: NSDictionary, result: @escaping FlutterResult) {
     let url = URL(string: uri)
+    if(args != nil){
+        for (k, v) in args {
+            let queryItems = [URLQueryItem(name: k, value: v)]
+            url = url.appending(queryItems)!
+        }
+    }
     if (checkAvailability(uri: uri)) {
       UIApplication.shared.openURL(url!)
       result(true)
@@ -39,4 +46,14 @@ public class SwiftFlutterPlugin: NSObject, Flutter.FlutterPlugin {
     result(false)
   }
   
+}
+
+extension URL {
+    func appending(_ queryItems: [URLQueryItem]) -> URL? {
+        guard var urlComponents = URLComponents(url: self, resolvingAgainstBaseURL: true) else {
+            return nil
+        }
+        urlComponents.queryItems = (urlComponents.queryItems ?? []) + queryItems
+        return urlComponents.url
+    }
 }

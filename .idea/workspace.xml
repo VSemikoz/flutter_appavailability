@@ -22,8 +22,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dab2039d-5a6c-4b15-bb21-e5e3f870bb62" name="Default" comment="">
+    <list default="true" id="dab2039d-5a6c-4b15-bb21-e5e3f870bb62" name="Default" comment="Refactoring">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/example/.flutter-plugins-dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/Flutter/flutter_export_environment.sh" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Flutter/flutter_export_environment.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Podfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Classes/SwiftFlutterPlugin.swift" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/SwiftFlutterPlugin.swift" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -246,6 +252,14 @@
       <option name="presentableId" value="Default" />
       <updated>1536623487994</updated>
     </task>
+    <task id="LOCAL-00001" summary="Refactoring">
+      <created>1622217803276</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1622217803276</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -259,5 +273,16 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactoring" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2068" y="91" width="1240" height="700" key="DiffContextDialog" timestamp="1622218170796">
+      <screen x="1440" y="25" width="1920" height="1175" />
+    </state>
+    <state x="100" y="100" width="1240" height="700" key="DiffContextDialog/1440.0.1920.1200/0.0.1440.900@0.0.1440.900" timestamp="1622217686946" />
+    <state x="2068" y="91" width="1240" height="700" key="DiffContextDialog/1440.25.1920.1175/0.25.1440.875@0.25.1440.875" timestamp="1622218170796" />
   </component>
 </project>
