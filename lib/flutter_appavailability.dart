@@ -89,9 +89,15 @@ class AppAvailability {
     Map<String, dynamic> path = <String, dynamic>{};
     path.putIfAbsent('uri', () => uri);
     if (Platform.isAndroid) {
-      await _channel.invokeMethod("launchApp", [path, args]);
+      await _channel.invokeMethod('launchApp', <String, dynamic>{
+        'uri': uri,
+        'args': args,
+      });
     } else if (Platform.isIOS) {
-      bool appAvailable = await _channel.invokeMethod("launchApp", [path, args]);
+      bool appAvailable = await _channel.invokeMethod('launchApp', <String, dynamic>{
+        'uri': uri,
+        'args': args,
+      });
       if (!appAvailable) {
         throw PlatformException(code: "", message: "App not found $uri");
       }
