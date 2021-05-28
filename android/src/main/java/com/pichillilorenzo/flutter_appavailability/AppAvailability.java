@@ -58,7 +58,8 @@ public class AppAvailability implements MethodCallHandler {
                 break;
             case "launchApp":
                 uriSchema = call.argument("uri").toString();
-                this.launchApp(uriSchema, result);
+                final HashMap<String, String> args = call.argument("args");
+                this.launchApp(uriSchema, args, result);
                 break;
             default:
                 result.notImplemented();
@@ -130,24 +131,16 @@ public class AppAvailability implements MethodCallHandler {
     }
 
     @TargetApi(Build.VERSION_CODES.CUPCAKE)
-    private void launchApp(List<Object> args, Result result) {
+    private void launchApp(String packageName, HashMap<String, String> args, Result result) {
         PackageInfo info = getAppPackageInfo(packageName);
-        final String packageName = (String) args.get(0);
-        HashMap<String, String> params = HashMap < String, String>();
-        if (args.get(1) != null) {
-            params = (HashMap<String, String>) args.get(1);
-        }
 
         if (info != null) {
             Intent launchIntent = registrar.context().getPackageManager().getLaunchIntentForPackage(packageName);
             if (launchIntent != null) {
-                for (int i = 0; i < params.keySet().size(); i++) {
-                    final String key = (java.lang.String) params.keySet().toArray()[i];
-                    launchIntent.putExtra(key, params.get(key));
-                }
-
-
                 launchIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                for (String key : args.keySet()) {
+                    launchIntent.putExtra(key, args.get(key));
+                }
                 registrar.context().startActivity(launchIntent);
                 result.success(null);
                 return;
@@ -155,5 +148,6 @@ public class AppAvailability implements MethodCallHandler {
         }
 
         result.error("", "App not found " + packageName, null);
+
     }
 }
