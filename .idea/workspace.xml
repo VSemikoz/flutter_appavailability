@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="NONE" />
   </component>
@@ -26,17 +29,14 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/example/.flutter-plugins-dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/ios/Flutter/flutter_export_environment.sh" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Flutter/flutter_export_environment.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Podfile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/SwiftFlutterPlugin.swift" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/SwiftFlutterPlugin.swift" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[R58M63AG7YJ]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -284,5 +284,25 @@
     </state>
     <state x="100" y="100" width="1240" height="700" key="DiffContextDialog/1440.0.1920.1200/0.0.1440.900@0.0.1440.900" timestamp="1622217686946" />
     <state x="2068" y="91" width="1240" height="700" key="DiffContextDialog/1440.25.1920.1175/0.25.1440.875@0.25.1440.875" timestamp="1622218170796" />
+    <state width="1398" height="345" key="GridCell.Tab.0.bottom" timestamp="1622219904662">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="345" key="GridCell.Tab.0.bottom/1440.0.1920.1200/0.0.1440.900@0.0.1440.900" timestamp="1622219904662" />
+    <state width="1398" height="345" key="GridCell.Tab.0.center" timestamp="1622219904659">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="345" key="GridCell.Tab.0.center/1440.0.1920.1200/0.0.1440.900@0.0.1440.900" timestamp="1622219904659" />
+    <state width="1398" height="345" key="GridCell.Tab.0.left" timestamp="1622219904658">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="345" key="GridCell.Tab.0.left/1440.0.1920.1200/0.0.1440.900@0.0.1440.900" timestamp="1622219904658" />
+    <state width="1398" height="345" key="GridCell.Tab.0.right" timestamp="1622219904660">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="345" key="GridCell.Tab.0.right/1440.0.1920.1200/0.0.1440.900@0.0.1440.900" timestamp="1622219904660" />
+    <state x="320" y="187" key="Vcs.Push.Dialog.v2" timestamp="1622219866167">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="320" y="187" key="Vcs.Push.Dialog.v2/1440.0.1920.1200/0.0.1440.900@0.0.1440.900" timestamp="1622219866167" />
   </component>
 </project>
