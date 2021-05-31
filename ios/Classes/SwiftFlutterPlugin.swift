@@ -10,6 +10,7 @@ public class SwiftFlutterPlugin: NSObject, Flutter.FlutterPlugin {
 
   public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
     var uriSchema = ""
+    var args: NSDictionary = [:]
     let arguments = call.arguments as? NSDictionary
     switch call.method {
       case "checkAvailability":
@@ -18,8 +19,8 @@ public class SwiftFlutterPlugin: NSObject, Flutter.FlutterPlugin {
         break
       case "launchApp":
         uriSchema = (arguments!["uri"] as? String)!
-        uriSchema = (arguments!["args"] as? NSDictionary)!
-        launchApp(uri: uriSchema, result: result)
+        args = (arguments!["args"] as? NSDictionary)!
+        launchApp(uri: uriSchema,args: args, result: result)
         break
       default:
         break
@@ -32,11 +33,12 @@ public class SwiftFlutterPlugin: NSObject, Flutter.FlutterPlugin {
   }
   
   public func launchApp (uri: String, args: NSDictionary, result: @escaping FlutterResult) {
-    let url = URL(string: uri)
-    if(args != nil){
+    var url = URL(string: uri)
+    
+    if(!args.allKeys.isEmpty){
         for (k, v) in args {
-            let queryItems = [URLQueryItem(name: k, value: v)]
-            url = url.appending(queryItems)!
+            let queryItems = [URLQueryItem(name: k as! String, value: v as! String)]
+            url = url?.appending(queryItems)!
         }
     }
     if (checkAvailability(uri: uri)) {
@@ -44,7 +46,7 @@ public class SwiftFlutterPlugin: NSObject, Flutter.FlutterPlugin {
       result(true)
     }
     result(false)
-  }
+ }
   
 }
 
